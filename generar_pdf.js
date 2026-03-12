@@ -6,7 +6,7 @@ const path = require('path');
     const page = await browser.newPage();
 
     // Cargar el HTML local
-    const filePath = path.resolve(__dirname, 'propuesta_luxury_light.html');
+    const filePath = path.resolve(__dirname, 'propuesta_corporativa_2025.html');
     await page.goto('file:///' + filePath.replace(/\\/g, '/'), {
         waitUntil: 'networkidle0',
         timeout: 30000
@@ -21,7 +21,7 @@ const path = require('path');
     await page.evaluateHandle('document.fonts.ready');
 
     // Generar el PDF
-    const pdfPath = path.resolve(__dirname, 'Propuesta_Luxury_Light_2025.pdf');
+    const pdfPath = path.resolve(__dirname, 'Propuesta_Corporativa_2025.pdf');
     await page.pdf({
         path: pdfPath,
         format: 'A4',

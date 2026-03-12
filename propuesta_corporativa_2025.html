@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Corporativa 2025 - Jessica Ocampo</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --gold-accent: #b4975a;
+            --gold-dark: #8e6f3e;
+            --dark-bg: #0a0e17;
+            --light-bg: #f9fafb;
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+        }
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .content-container {
+                padding: 0 2cm !important;
+            }
+
+            section.page-break-before, 
+            header.cover-page {
+                padding-top: 1.5cm !important;
+                margin-top: 0 !important;
+            }
+
+            .premium-card {
+                border: 0.5px solid rgba(180, 151, 90, 0.2) !important;
+                box-shadow: none !important;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+        }
+
+        .font-luxury {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* --- PORTADA DARK --- */
+        .cover-page {
+            height: 100vh;
+            background-color: var(--dark-bg);
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(180, 151, 90, 0.05) 0%, transparent 70%),
+                url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 18v2h-2v-2h2zm-2-2v2h-2v-2h2zm4 4v2h-2v-2h2zm-2 2v2h-2v-2h2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+            break-after: page;
+        }
+
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            pointer-events: none;
+        }
+
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #d4c39d 0%, #b4975a 50%, #8e6f3e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- INTERIOR LIGHT --- */
+        .content-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 4rem 5rem;
+        }
+
+        .section-header {
+            font-size: 0.65rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--gold-accent);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .section-header::before,
+        .section-header::after {
+            content: '';
+            flex: 1;
+            height: 0.5px;
+            background: linear-gradient(to right, transparent, var(--gold-accent));
+        }
+
+        .section-header::after {
+            background: linear-gradient(to right, var(--gold-accent), transparent);
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 1px;
+            margin-bottom: 4rem;
+            line-height: 1.1;
+        }
+
+        .premium-card {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(180, 151, 90, 0.1);
+            break-inside: avoid;
+        }
+
+        /* --- COMPONENTS --- */
+        .alert-card {
+            border: 1px solid #fee2e2;
+            background: #fffafa;
+            border-radius: 15px;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .quote-box {
+            background: var(--dark-bg);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold-accent);
+            font-style: italic;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .download-btn {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 100;
+            background: var(--dark-bg);
+            color: white;
+            padding: 0.8rem 1.6rem;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .page-break-before {
+            page-break-before: always;
+            padding-top: 3rem;
+        }
+
+        ul { list-style: none; padding: 0; }
+        li { position: relative; padding-left: 1.5rem; margin-bottom: 0.8rem; }
+        li::before { content: '•'; position: absolute; left: 0; color: var(--gold-accent); font-weight: bold; }
+        
+        .check-list li::before { content: '✔'; }
+        
+        .luxury-table-container {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(180, 151, 90, 0.2);
+            width: 100%;
+            break-inside: avoid;
+            background: white;
+        }
+
+        .luxury-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .luxury-table th {
+            background-color: #f3f4f6;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.65rem;
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1.5px solid var(--gold-accent);
+        }
+
+        .luxury-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="window.print()" class="download-btn no-print">
+        <i data-lucide="download"></i>
+        📥 DESCARGAR PROPUESTA EN PDF
+    </button>
+
+    <!-- 00 / PORTADA -->
+    <header class="cover-page">
+        <div class="mb-16">
+            <img src="4.png" alt="Logo" class="h-32 mx-auto" onerror="this.src='logo_jessica.png.png'">
+        </div>
+        
+        <div class="text-center space-y-6 max-w-4xl px-8">
+            <div class="flex items-center justify-center gap-4 mb-4">
+                <div class="h-[1px] w-12 bg-gold-accent opacity-50"></div>
+                <span class="text-xs uppercase tracking-[8px] opacity-70">Consultoría Estratégica</span>
+                <div class="h-[1px] w-12 bg-gold-accent opacity-50"></div>
+            </div>
+            
+            <h1 class="font-luxury text-7xl font-black tracking-tight leading-tight">
+                <span class="block">BIENESTAR</span>
+                <span class="block text-gold-gradient">INTEGRAL</span>
+                <span class="text-4xl block mt-4 font-light opacity-90">& ALTO RENDIMIENTO</span>
+            </h1>
+            
+            <div class="pt-12 border-t border-white/5 inline-block">
+                <p class="text-sm tracking-[10px] uppercase font-light opacity-60">Propuesta Corporativa 2025</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="content-container">
+        <!-- 01 / EL ESCENARIO ACTUAL -->
+        <section class="mb-24">
+            <div class="section-header">01 / El Escenario Actual</div>
+            <h2 class="main-title">El Reto Corporativo</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-lg font-light text-gray-600 leading-relaxed italic border-l-4 border-gold-accent pl-8">
+                    El ecosistema laboral moderno enfrenta desafíos sin precedentes. El estrés crónico, el burnout (síndrome del trabajador quemado) y las afecciones músculo-esqueléticas no solo deterioran la calidad de vida, sino que representan una fuga silenciosa de capital.
+                </div>
+                
+                <div class="alert-card">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i data-lucide="alert-circle" class="text-red-600 w-6 h-6"></i>
+                        <span class="text-red-700 font-black text-xs uppercase tracking-widest">Alerta de Productividad</span>
+                    </div>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        Estudios demuestran que el ausentismo, la rotación de personal y el presentismo (cuerpo presente, mente ausente) generan <strong class="text-red-700">entre un 30% y un 40% de pérdida</strong> en la productividad global. Atender la salud no es un gasto, es la inversión más estratégica.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02 / METODOLOGÍA -->
+        <section class="page-break-before mb-24">
+            <div class="section-header">02 / Metodología</div>
+            <h2 class="main-title">Nuestra Solución: El Modelo Biopsicosocial</h2>
+            
+            <div class="premium-card">
+                <p class="text-lg text-gray-600 mb-12 leading-relaxed">
+                    Frente a enfoques fragmentados, proponemos un abordaje integral basado en el modelo biopsicosocial. Entendemos al colaborador como un ser completo donde las dimensiones biológica (física), psicológica (emociones, mente) y social interactúan constantemente.
+                </p>
+                
+                <div class="quote-box">
+                    "Al impactar simultáneamente en estas tres esferas, logramos una transformación cultural profunda, donde el bienestar individual se convierte en el motor del desempeño colectivo."
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 / SERVICIOS GRUPALES (Contenido previo adaptado) -->
+        <section class="page-break-before mb-24">
+            <div class="section-header">03 / Plan de Acción</div>
+            <h2 class="main-title">Servicios Grupales Corporativos</h2>
+            <p class="text-center text-muted -mt-10 mb-16 text-sm italic">(Intervenciones puntuales de impacto inmediato)</p>
+
+            <!-- PAUSAS ACTIVAS -->
+            <div class="premium-card mb-12">
+                <div class="flex flex-col md:flex-row justify-between items-start gap-4 mb-10 border-b border-gray-50 pb-6">
+                    <div>
+                        <h3 class="text-2xl font-bold">🔄 PAUSAS ACTIVAS – “Pausa que Suma”</h3>
+                        <p class="text-xs text-muted mt-1 uppercase">15 min | Presencial o virtual</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div>
+                        <h4 class="text-xs font-black uppercase text-gold-accent mb-4">Incluye</h4>
+                        <ul class="text-sm space-y-2">
+                            <li>Movilidad articular guiada (cuello, hombros, columna).</li>
+                            <li>Activación muscular preventiva.</li>
+                            <li>Técnicas de regulación del estrés y respiración.</li>
+                            <li>Recomendaciones prácticas para el puesto.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg text-sm">
+                        <h4 class="text-xs font-black uppercase mb-4 text-gold-accent">Inversión</h4>
+                        <p class="flex justify-between font-bold">Plan mensual (4): <span>$400.000 COP</span></p>
+                        <p class="flex justify-between mt-2 opacity-70">Plan Intensivo (8): <span>$720.000 COP</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JORNADA EXPRESS -->
+            <div class="premium-card">
+                <h3 class="text-2xl font-bold mb-4">💆‍♂️ JORNADA EXPRESS DE BIENESTAR</h3>
+                <p class="text-xs text-muted mb-8 uppercase">Atención individual rotativa (8–10 min)</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+                    <ul class="check-list">
+                        <li>Liberación muscular y percusión terapéutica.</li>
+                        <li>Alivio del dolor durante la jornada.</li>
+                        <li>Mejora del rendimiento posterior.</li>
+                    </ul>
+                    <div class="bg-gray-50 p-6 rounded-lg self-center">
+                        <p class="text-center font-black text-xl italic">$200.000 COP / Hora</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04 / PROGRAMA ESTRUCTURAL -->
+        <section class="page-break-before mb-24">
+            <div class="section-header">04 / Productividad</div>
+            <h2 class="main-title">Productividad en Movimiento</h2>
+            
+            <div class="premium-card">
+                <div class="flex flex-wrap items-center justify-between gap-8">
+                    <div class="flex-1 min-w-[300px]">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-gold-accent text-white px-3 py-1 rounded-sm text-[10px] font-bold">PREMIUM</span>
+                            <h3 class="text-3xl font-black">Plan Integral Estratégico</h3>
+                        </div>
+                        <ul class="text-sm space-y-3 mb-8">
+                            <li>Auditoría ergonómica por puesto de trabajo.</li>
+                            <li>Asesoría postural individualizada.</li>
+                            <li>Informe de impacto gerencial con métricas de salud.</li>
+                        </ul>
+                    </div>
+                    <div class="text-center p-8 bg-gray-50 rounded-xl border border-gold-accent/20">
+                        <p class="text-xs font-bold text-muted uppercase">Desde</p>
+                        <p class="text-5xl font-black text-gray-900 my-2">$90.000</p>
+                        <p class="text-[10px] font-bold text-gold-accent uppercase">COP / Colaborador</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 05 / IMPACTO -->
+        <section class="page-break-before mb-24">
+            <div class="section-header">05 / Valor Agregado</div>
+            <h2 class="main-title">Impacto en Indicadores</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="premium-card">
+                    <ul class="space-y-6">
+                        <li class="flex items-center gap-4 text-sm font-bold"><span class="text-red-500 text-lg font-black">↓</span> Ausentismo laboral</li>
+                        <li class="flex items-center gap-4 text-sm font-bold"><span class="text-red-500 text-lg font-black">↓</span> Incapacidades recurrentes</li>
+                        <li class="flex items-center gap-4 text-sm font-bold"><span class="text-green-600 text-lg font-black">↑</span> Productividad sostenida</li>
+                    </ul>
+                </div>
+                <div class="premium-card">
+                    <h4 class="text-xs font-black uppercase text-gold-accent mb-6">Diferencial Clínico</h4>
+                    <p class="text-sm text-gray-600 italic">"Enfoque clínico–preventivo de fisioterapia, no recreativo. Escalabilidad total según tamaño de nómina."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06 / CONVENIO -->
+        <section class="page-break-before">
+            <div class="section-header">Alianzas Jessica Ocampo</div>
+            <h2 class="main-title">Beneficios del Convenio</h2>
+            <div class="grid grid-cols-2 gap-8">
+                <div class="p-8 bg-white border border-gray-100 rounded-xl shadow-sm">
+                    <p class="text-4xl font-black mb-2">15% OFF</p>
+                    <p class="text-xs font-bold uppercase text-gold-accent">Colaboradores</p>
+                </div>
+                <div class="p-8 bg-white border border-gray-100 rounded-xl shadow-sm">
+                    <p class="text-4xl font-black mb-2">10% OFF</p>
+                    <p class="text-xs font-bold uppercase text-gray-400">Familiares</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
