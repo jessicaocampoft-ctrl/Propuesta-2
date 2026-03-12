@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Corporativa 2025 - Jessica Ocampo (Minimalist Edition)</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --gold-accent: #b4975a;
+            --pure-white: #ffffff;
+            --deep-black: #000000;
+            --text-main: #333333;
+            --light-gray: #f2f2f2;
+        }
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            body {
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .content-container {
+                padding: 0 70px !important;
+            }
+
+            section {
+                padding-top: 1.5cm !important;
+            }
+            
+            .page-break-before {
+                page-break-before: always;
+                break-before: page;
+            }
+
+            .avoid-break {
+                break-inside: avoid !important;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--pure-white);
+            color: var(--deep-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .font-luxury {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .content-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 70px 5rem;
+        }
+
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: var(--deep-black);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .section-separator {
+            border-top: 1px solid var(--light-gray);
+            margin: 3rem 0;
+        }
+
+        .gold-highlight {
+            color: var(--gold-accent);
+            font-weight: 700;
+        }
+
+        .gold-line {
+            width: 50px;
+            height: 2px;
+            background-color: var(--gold-accent);
+            margin: 1rem 0;
+        }
+
+        .avoid-break {
+            break-inside: avoid;
+            margin-bottom: 2.5rem;
+            display: block;
+        }
+
+        /* Tables Minimalist */
+        .minimal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .minimal-table th {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 2px solid var(--deep-black);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .minimal-table td {
+            padding: 15px 12px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .minimal-table tr:last-child td {
+            border-bottom: 2px solid var(--gold-accent);
+        }
+
+        .page-break-before {
+            page-break-before: always;
+        }
+
+        ul { list-style: none; padding: 0; }
+        li { position: relative; padding-left: 1.2rem; margin-bottom: 0.5rem; }
+        li::before { content: '•'; position: absolute; left: 0; color: var(--gold-accent); }
+
+        .cover-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            break-after: page;
+        }
+
+        .main-heading {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 2rem 0;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--gold-accent);
+            padding-left: 15px;
+        }
+
+        .indicator-box {
+            border: 1px solid var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="window.print()" class="download-btn no-print">
+        DESCARGAR PDF
+    </button>
+
+    <!-- PORTADA -->
+    <header class="cover-page">
+        <div class="mb-10">
+            <img src="4.png" alt="Logo" class="h-24 mx-auto" onerror="this.src='logo_jessica.png.png'">
+        </div>
+        <p class="text-xs uppercase tracking-[8px] mb-4">Jessica Ocampo – Fisioterapeuta</p>
+        <div class="gold-line"></div>
+        <h1 class="font-luxury main-heading">
+            BIENESTAR INTEGRAL <br> & ALTO RENDIMIENTO
+        </h1>
+        <p class="text-sm uppercase tracking-[10px] opacity-60">Propuesta Corporativa 2025</p>
+    </header>
+
+    <div class="content-container">
+        <!-- 01 / EL ESCENARIO ACTUAL -->
+        <section class="mb-20">
+            <h2 class="font-luxury">01 / El Escenario Actual</h2>
+            <div class="avoid-break">
+                <h3 class="font-bold text-2xl mb-6">EL RETO CORPORATIVO</h3>
+                <p class="mb-6 text-gray-700">El ecosistema laboral moderno enfrenta desafíos sin precedentes. El estrés crónico, el burnout (síndrome del trabajador quemado) y las afecciones músculo-esqueléticas no solo deterioran la calidad de vida, sino que representan una fuga silenciosa de capital.</p>
+                
+                <div class="p-6 bg-red-50 border-l-4 border-red-500 rounded-r">
+                    <p class="font-bold text-red-700 uppercase text-xs tracking-widest mb-2">ALERTA DE PRODUCTIVIDAD</p>
+                    <p class="text-gray-800">Estudios demuestran que el ausentismo, la rotación de personal y el presentismo (cuerpo presente, mente ausente) generan <span class="font-bold">entre un 30% y un 40% de pérdida</span> en la productividad global. Atender la salud no es un gasto, es la inversión más estratégica.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02 / METODOLOGÍA -->
+        <section class="mb-20">
+            <h2 class="font-luxury">02 / Metodología</h2>
+            <div class="avoid-break">
+                <h3 class="font-bold text-2xl mb-6">NUESTRA SOLUCIÓN: EL MODELO BIOPSICOSOCIAL</h3>
+                <p class="mb-8 text-gray-700">Frente a enfoques fragmentados, proponemos un abordaje integral basado en el modelo biopsicosocial. Entendemos al colaborador como un ser completo donde las dimensiones biológica (física), psicológica (emociones, mente) y social interactúan constantemente.</p>
+                
+                <div class="p-10 border border-gray-200 italic text-center font-light leading-relaxed">
+                    "Al impactar simultáneamente en estas tres esferas, logramos una transformación cultural profunda, donde el bienestar individual se convierte en el motor del desempeño colectivo."
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 / SERVICIOS GRUPALES -->
+        <section class="mb-20">
+            <h2 class="font-luxury">03 / Servicios Grupales Corporativos</h2>
+            <p class="italic text-gray-500 mb-10">(Intervenciones puntuales de impacto inmediato)</p>
+
+            <!-- PAUSAS ACTIVAS -->
+            <div class="avoid-break pt-8">
+                <h3 class="font-bold text-xl mb-4">🔄 PAUSAS ACTIVAS – “Pausa que Suma”</h3>
+                <p class="text-sm opacity-60 mb-6 uppercase tracking-wider">Duración: 15 minutos | Modalidad: Presencial o virtual</p>
+                
+                <p class="font-bold text-xs uppercase text-gold-accent mb-2">Objetivo</p>
+                <p class="mb-4 text-sm">Activar el cuerpo, reducir tensión y mejorar el enfoque sin afectar la operación diaria.</p>
+                
+                <ul class="mb-6 text-sm">
+                    <li>Movilidad articular guiada para cuello, hombros, columna y cadera.</li>
+                    <li>Activación muscular preventiva de baja intensidad.</li>
+                    <li>Técnicas breves de regulación del estrés y respiración consciente.</li>
+                </ul>
+
+                <table class="minimal-table">
+                    <thead>
+                        <tr>
+                            <th>Inversión Pausas Activas</th>
+                            <th class="text-right">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sesión individual</td>
+                            <td class="text-right">$120.000 COP</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">Plan mensual (4 sesiones)</td>
+                            <td class="text-right font-bold text-gold-accent">$400.000 COP</td>
+                        </tr>
+                        <tr>
+                            <td>Plan intensivo (8 sesiones)</td>
+                            <td class="text-right">$720.000 COP</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- JORNADA EXPRESS -->
+            <div class="avoid-break pt-10 border-t border-gray-100">
+                <h3 class="font-bold text-xl mb-4">💆‍♂️ JORNADA EXPRESS DE BIENESTAR</h3>
+                <p class="text-sm opacity-60 mb-6 uppercase tracking-wider">Atención individual en el puesto (8-10 min)</p>
+                
+                <ul class="mb-6 text-sm">
+                    <li>Liberación muscular en zonas de sobrecarga.</li>
+                    <li>Percusión terapéutica y recomendación postural personalizada.</li>
+                    <li>Reducción de fatiga acumulada inmediata.</li>
+                </ul>
+
+                <div class="p-6 bg-gray-50 border border-gray-200 text-center">
+                    <p class="text-gray-500 text-xs uppercase mb-1">Inversión por hora</p>
+                    <p class="text-2xl font-black">$200.000 COP</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTIVIDAD EN MOVIMIENTO -->
+        <section class="page-break-before mb-20">
+            <h2 class="font-luxury">04 / Programa Estructural</h2>
+            <div class="avoid-break">
+                <h3 class="font-bold text-2xl mb-6">PRODUCTIVIDAD EN MOVIMIENTO</h3>
+                <p class="mb-8 text-gray-700">Programa estratégico integral diseñado para reducir el ausentismo y mejorar el impacto físico/cognitivo del talento humano.</p>
+                
+                <table class="minimal-table">
+                    <thead>
+                        <tr>
+                            <th>Plan Corporativo Premium</th>
+                            <th class="text-right">Inversión Mensual</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Inversión por colaborador (Desde)</td>
+                            <td class="text-right font-black text-2xl text-gold-accent">$90.000 COP</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                    <div class="indicator-box">
+                        <p class="font-bold text-xs uppercase mb-4">Incluye</p>
+                        <ul class="text-sm">
+                            <li>Auditoría ergonómica</li>
+                            <li>Pausas activas estructuradas</li>
+                            <li>Informe de impacto gerencial</li>
+                        </ul>
+                    </div>
+                    <div class="indicator-box border-gold-accent/30 bg-gold-accent/5">
+                        <p class="font-bold text-xs uppercase mb-4 gold-highlight">Beneficios Gerenciales</p>
+                        <ul class="text-sm">
+                            <li>Reducción sostenida del ausentismo</li>
+                            <li>Mayor rendimiento del personal</li>
+                            <li>Datos reales para toma de decisiones</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INDICADORES -->
+        <section class="mb-20">
+            <h2 class="font-luxury">05 / Resultados Medibles</h2>
+            <div class="avoid-break">
+                <h3 class="font-bold text-xl mb-6 uppercase tracking-widest text-center">Impacto en Indicadores</h3>
+                <div class="grid grid-cols-2 gap-4 text-sm font-semibold">
+                    <div class="p-4 border border-gray-100 flex items-center justify-between">
+                        <span>↓ Ausentismo laboral</span>
+                        <i data-lucide="trending-down" class="text-red-500"></i>
+                    </div>
+                    <div class="p-4 border border-gray-100 flex items-center justify-between">
+                        <span>↓ Incapacidades médicas</span>
+                        <i data-lucide="trending-down" class="text-red-500"></i>
+                    </div>
+                    <div class="p-4 border border-gray-100 flex items-center justify-between">
+                        <span>↑ Productividad sostenida</span>
+                        <i data-lucide="trending-up" class="text-green-500"></i>
+                    </div>
+                    <div class="p-4 border border-gray-100 flex items-center justify-between">
+                        <span>↑ Bienestar organizacional</span>
+                        <i data-lucide="trending-up" class="text-green-500"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BENEFICIOS CONVENIO -->
+        <section class="page-break-before">
+            <h2 class="font-luxury">06 / Alianza Estratégica</h2>
+            <div class="avoid-break">
+                <h3 class="font-bold text-2xl mb-8 text-center">BENEFICIOS EXCLUSIVOS DEL CONVENIO</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="p-10 border-2 border-gold-accent text-center">
+                        <p class="text-5xl font-black mb-2">15% <span class="text-lg">OFF</span></p>
+                        <p class="font-bold uppercase tracking-widest text-gold-accent mb-6">Colaboradores Activos</p>
+                        <p class="text-xs text-gray-500 italic">Sesiones de fisioterapia, descargas musculares y valoraciones posturales.</p>
+                    </div>
+                    <div class="p-10 border border-gray-200 text-center opacity-70">
+                        <p class="text-4xl font-black mb-2">10% <span class="text-lg">OFF</span></p>
+                        <p class="font-bold uppercase tracking-widest mb-6">Familiares Directos</p>
+                        <p class="text-xs text-gray-500 italic">Válido para padres, hijos y pareja en servicios individuales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
