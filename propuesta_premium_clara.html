@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta de Convenio Premium - Jessica Ocampo</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --cream-bg: #fdfcf7;
+            --navy-deep: #1a2533;
+            --gold-accent: #b4975a;
+            --text-body: #374151;
+            --text-muted: #6b7280;
+            --white: #ffffff;
+        }
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            body {
+                background-color: var(--cream-bg) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .content-container {
+                padding: 0 2cm !important;
+            }
+
+            section {
+                padding-top: 1.5cm !important;
+            }
+
+            .avoid-break {
+                break-inside: avoid !important;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream-bg);
+            color: var(--text-body);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .font-luxury {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .content-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 3rem 6rem;
+        }
+
+        .download-btn {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 100;
+            background: var(--navy-deep);
+            color: white;
+            padding: 0.8rem 1.6rem;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            color: var(--navy-deep);
+            line-height: 1.1;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin: 2rem 0;
+        }
+
+        .section-header {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold-accent);
+            font-weight: 700;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-header::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--gold-accent), transparent);
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid rgba(180, 151, 90, 0.15);
+            padding: 3rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            break-inside: avoid;
+        }
+
+        .luxury-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        .luxury-table th {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 2px solid var(--gold-accent);
+            color: var(--navy-deep);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .luxury-table td {
+            padding: 1.25rem 1.0rem;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 0.95rem;
+        }
+
+        .price-text {
+            color: var(--gold-accent);
+            font-weight: 800;
+        }
+
+        .impact-box {
+            border-left: 4px solid var(--gold-accent);
+            padding-left: 2rem;
+            margin: 3rem 0;
+        }
+
+        .badge {
+            background: var(--navy-deep);
+            color: white;
+            padding: 0.4rem 1rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 2px;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            color: var(--navy-deep);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--navy-deep);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-gold {
+            color: var(--gold-accent);
+            font-weight: 700;
+        }
+
+        .checked-list li::before {
+            content: '🔸';
+            margin-right: 10px;
+            font-size: 0.7rem;
+        }
+
+        .partnership-box {
+            background: var(--white);
+            border: 2px solid var(--gold-accent);
+            padding: 3rem;
+            text-align: center;
+        }
+
+        ul { list-style: none; padding: 0; }
+        footer { margin-top: 5rem; text-align: center; border-top: 1px solid var(--gold-accent); padding-top: 2rem; opacity: 0.5; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; }
+
+    </style>
+</head>
+
+<body>
+    <button onclick="window.print()" class="download-btn no-print">
+        <i data-lucide="download"></i>
+        DESCARGAR PDF
+    </button>
+
+    <div class="content-container">
+        <!-- HEADER -->
+        <header class="hero-section">
+            <img src="4.png" alt="Logo Jessica Ocampo" class="mx-auto h-24 mb-10" onerror="this.src='logo_jessica.png.png'">
+            <p class="text-[0.65rem] uppercase tracking-[8px] text-muted mb-4">Jessica Ocampo – Fisioterapeuta</p>
+            <h1 class="font-luxury page-title">PLAN DE BIENESTAR <br> EMPRESARIAL</h1>
+            <div class="flex justify-center mt-6">
+                <div class="h-[2px] w-20 bg-gold-accent"></div>
+            </div>
+            <p class="mt-8 text-xs uppercase tracking-[10px] opacity-60">Propuesta Corporativa 2025</p>
+        </header>
+
+        <!-- INTRODUCCIÓN -->
+        <section class="mb-24">
+            <div class="section-header">Introducción Estratégica</div>
+            <h2 class="font-luxury">El Reto del Capital Humano</h2>
+            <div class="space-y-6 text-lg font-light leading-relaxed">
+                <p>
+                    El ecosistema laboral moderno enfrenta desafíos sin precedentes. El estrés crónico, el burnout (síndrome del trabajador quemado) y las afecciones músculo-esqueléticas no solo deterioran la calidad de vida, sino que representan una <span class="highlight-gold">fuga silenciosa de capital</span>.
+                </p>
+                <div class="p-8 bg-red-50 border border-red-100 rounded-lg avoid-break">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="info" class="text-red-500 w-5 h-5"></i>
+                        <span class="text-xs font-bold uppercase tracking-widest text-red-700">Alerta de Productividad</span>
+                    </div>
+                    <p class="text-sm text-gray-700">
+                        Estudios demuestran que el ausentismo, la rotación de personal y el presentismo (cuerpo presente, mente ausente) generan <strong class="text-red-700">entre un 30% y un 40% de pérdida</strong> en la productividad global. Atender la salud no es un gasto, es la inversión más estratégica.
+                    </p>
+                </div>
+                <p> Nuestro objetivo es transformar la cultura de bienestar de su organización bajo el <strong>Modelo Biopsicosocial</strong>, donde el equilibrio físico y mental del colaborador se convierte en el motor del desempeño colectivo.</p>
+            </div>
+        </section>
+
+        <!-- SERVICIOS GRUPALES -->
+        <section class="mb-24">
+            <div class="section-header">🔸 Servicios Grupales Corporativos</div>
+            <h2 class="font-luxury text-center mb-16">Intervenciones de Impacto Inmediato</h2>
+
+            <!-- Pausas Activas -->
+            <div class="service-card">
+                <span class="badge mb-4">15 Minutos</span>
+                <h3 class="font-luxury">🔄 PAUSAS ACTIVAS – “Pausa que Suma”</h3>
+                <p class="text-xs uppercase tracking-widest text-muted mb-6">Modalidad: Presencial o Virtual</p>
+                
+                <p class="text-sm">Activar el cuerpo y reducir la tensión sin afectar el flujo operativo.</p>
+                <h4 class="text-[0.65rem] font-bold uppercase tracking-widest text-gold-accent mt-8 mb-4">Incluye</h4>
+                <ul class="checked-list text-sm space-y-3 mb-8">
+                    <li>Movilidad articular guiada (cuello, hombros, columna).</li>
+                    <li>Activación muscular preventiva de baja intensidad.</li>
+                    <li>Técnicas de regulación del estrés y respiración funcional.</li>
+                    <li>Recomendaciones ergonómicas para el puesto de trabajo.</li>
+                </ul>
+
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th>Plan de Sesiones</th>
+                            <th class="text-right">Valor Inversión</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Sesión Individual</td><td class="text-right">$120.000 COP</td></tr>
+                        <tr><td class="font-bold">Plan Mensual (4 sesiones)</td><td class="text-right price-text text-xl">$400.000 COP</td></tr>
+                        <tr><td>Plan Intensivo (8 sesiones)</td><td class="text-right">$720.000 COP</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Jornada Express -->
+            <div class="service-card">
+                <h3 class="font-luxury">💆‍♂️ JORNADA EXPRESS DE BIENESTAR</h3>
+                <p class="text-xs uppercase tracking-widest text-muted mb-6">Atención Individual Rotativa (8-10 min)</p>
+                <p class="text-sm mb-6">Liberación muscular y percusión terapéutica enfocada en aliviar el dolor inmediatamente durante la jornada laboral.</p>
+                <div class="p-8 bg-gray-50 border border-gray-100 rounded text-center">
+                    <p class="text-xs uppercase tracking-widest text-muted mb-2">Inversión por hora de atención</p>
+                    <p class="text-3xl font-black text-navy-deep">$200.000 COP</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGRAMA MENSUAL -->
+        <section class="mb-24 avoid-break">
+            <div class="section-header">🔸 Programa Mensual Estructural</div>
+            <h2 class="font-luxury">Productividad en Movimiento</h2>
+            <div class="service-card border-gold-accent border-2">
+                <p class="text-lg leading-relaxed mb-10">
+                    Un programa estratégico diseñado para reducir significativamente las tasas de ausentismo e incapacidades corporativas mediante el seguimiento clínico continuo.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-gold-accent mb-4">Componentes del Plan</h4>
+                        <ul class="checked-list text-sm space-y-2">
+                            <li>Auditoría ergonómica por puesto.</li>
+                            <li>Pausas activas estructuradas quincenales.</li>
+                            <li>Asesoría postural individualizada.</li>
+                            <li>Informe de impacto gerencial trimestral.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-navy-deep text-white p-6 rounded flex flex-col justify-center items-center">
+                        <p class="text-xs uppercase tracking-widest opacity-60 mb-2">Inversión Sugerida Desde</p>
+                        <p class="text-4xl font-black text-gold-accent">$90.000</p>
+                        <p class="text-[0.6rem] uppercase tracking-wider mt-2">COP / Por Colaborador</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPACTO Y CONVENIO -->
+        <section class="page-break-before mb-24">
+            <div class="section-header">🔸 Resultados Medibles</div>
+            <h2 class="font-luxury text-center">Impacto en Indicadores</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 mb-20">
+                <div class="impact-box">
+                    <p class="text-sm font-bold uppercase tracking-widest text-navy-deep">↓ Ausentismo Laboral</p>
+                    <p class="text-xs text-muted mt-1">Reducción de incapacidades por dolor osteomuscular.</p>
+                </div>
+                <div class="impact-box">
+                    <p class="text-sm font-bold uppercase tracking-widest text-navy-deep">↑ Productividad Sostenida</p>
+                    <p class="text-xs text-muted mt-1">Mejora en el enfoque y reducción de la fatiga cognitiva.</p>
+                </div>
+            </div>
+
+            <div class="partnership-box avoid-break">
+                <h2 class="font-luxury mb-6">Beneficios de Convenio</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-6 border border-gold-accent/30 rounded">
+                        <p class="text-4xl font-black text-navy-deep">15% OFF</p>
+                        <p class="text-xs uppercase tracking-widest text-gold-accent font-bold">Colaboradores</p>
+                        <p class="text-[0.65rem] mt-4 opacity-70">En servicios de fisioterapia clínica y descarga muscular.</p>
+                    </div>
+                    <div class="p-6 border border-gray-100 rounded">
+                        <p class="text-3xl font-black text-muted">10% OFF</p>
+                        <p class="text-xs uppercase tracking-widest text-muted font-bold">Familiares</p>
+                        <p class="text-[0.65rem] mt-4 opacity-50">Válido para núcleo familiar primario del empleado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            Jessica Ocampo Fisioterapia – Propuesta Estratégica 2025 – Medellín, Colombia
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
