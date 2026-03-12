@@ -6,8 +6,8 @@ const path = require('path');
     const page = await browser.newPage();
 
     // Cargar el HTML local
-    const htmlPath = path.resolve(__dirname, 'propuesta_empresarial.html');
-    await page.goto('file:///' + htmlPath.replace(/\\/g, '/'), {
+    const filePath = path.resolve(__dirname, 'propuesta_bienestar.html');
+    await page.goto('file:///' + filePath.replace(/\\/g, '/'), {
         waitUntil: 'networkidle0',
         timeout: 30000
     });
@@ -21,7 +21,7 @@ const path = require('path');
     await page.evaluateHandle('document.fonts.ready');
 
     // Generar el PDF
-    const pdfPath = path.resolve(__dirname, 'Propuesta_Alineacion_1_5cm.pdf');
+    const pdfPath = path.resolve(__dirname, 'Propuesta_Bienestar_Premium_2025.pdf');
     await page.pdf({
         path: pdfPath,
         format: 'A4',
