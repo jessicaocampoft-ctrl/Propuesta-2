@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta de Convenio - Bienestar Psicosocial</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            @page {
+                size: A4 portrait;
+                margin: 1.5cm;
+            }
+            body {
+                background-color: #f9fafb !important;
+            }
+            /* Garantizar que los colores oscuros de la cabecera e hitos se impriman idénticos */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl {
+                box-shadow: none !important;
+                border: 1px solid #e5e7eb !important;
+            }
+            .print-break-inside-avoid {
+                page-break-inside: avoid;
+            }
+            main {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+            }
+            .py-16 {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Botón de Descarga Superior (No se imprime) -->
+    <div class="text-center bg-white py-4 border-b border-gray-200 no-print sticky top-0 z-50 shadow-sm">
+        <button onclick="window.print()" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 px-6 rounded-lg inline-flex items-center gap-2 transition-colors shadow-md">
+            <i data-lucide="download" class="w-5 h-5"></i>
+            DESCARGAR PROPUESTA EN PDF
+        </button>
+    </div>
+
+    <!-- Header / Hero alineado al estilo original -->
+    <header class="bg-gray-900 text-white py-16 px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 bg-yellow-500 z-30"></div>
+        
+        <!-- Logo en esquina superior derecha -->
+        <div class="absolute top-8 right-6 md:right-12 w-40 md:w-56 z-20">
+            <!-- Logo principal agregado -->
+            <img src="logo_jessica.png.png" alt="Jessica Ocampo Fisioterapeuta" class="w-full h-auto object-contain drop-shadow-lg" onerror="this.src='https://via.placeholder.com/350x80/000000/ffffff?text=JESSICA+OCAMPO'">
+        </div>
+        
+        <div class="max-w-4xl mx-auto flex flex-col items-start md:items-center text-left md:text-center relative z-10 pt-16 md:pt-8">
+            <h2 class="text-yellow-500 font-bold tracking-widest text-sm md:text-base uppercase mb-3 drop-shadow-md">Propuesta de Convenio</h2>
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-md">Bienestar Psicosocial y Productividad</h1>
+            <p class="text-gray-300 max-w-2xl text-sm md:text-lg leading-relaxed">
+                Transformando el bienestar individual en rendimiento colectivo y éxito organizacional.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-12">
+
+        <!-- 1. EL RETO CORPORATIVO -->
+        <section class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 relative overflow-hidden print-break-inside-avoid">
+            <div class="absolute top-0 right-0 p-4 opacity-5">
+                <i data-lucide="trending-down" class="w-32 h-32"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b-4 border-yellow-500 inline-block pb-1">1. El Reto Corporativo</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center relative z-10">
+                <div class="space-y-4 text-gray-600">
+                    <p>El ecosistema laboral moderno enfrenta desafíos sin precedentes. El <strong>estrés crónico</strong>, el <strong>burnout</strong> (síndrome del trabajador quemado) y las <strong>afecciones músculo-esqueléticas</strong> no solo deterioran la calidad de vida del colaborador, sino que representan una fuga silenciosa de capital para la empresa.</p>
+                </div>
+                <div class="bg-red-50 rounded-xl p-6 border border-red-100">
+                    <h3 class="font-bold text-red-900 mb-3 flex items-center gap-2">
+                        <i data-lucide="alert-triangle" class="text-red-500 w-5 h-5"></i>
+                        El Costo Real del Malestar
+                    </h3>
+                    <p class="text-sm text-red-800 leading-relaxed">
+                        Estudios organizacionales demuestran que el ausentismo, la rotación de personal y el presentismo (estar cuerpo presente, mente ausente) generan <strong>entre un 30% y un 40% de pérdida en la productividad global</strong>. Atender la salud integral no es un gasto, es la inversión más estratégica para asegurar el rendimiento sostenible.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. MODELO BIOPSICOSOCIAL -->
+        <section class="print-break-inside-avoid">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900">2. Nuestra Solución: El Modelo Biopsicosocial</h2>
+                <p class="text-gray-500 mt-2 max-w-2xl mx-auto">Un abordaje integral que conecta el ser con el hacer organizacional.</p>
+            </div>
+            <div class="bg-gray-900 text-white rounded-xl p-8 shadow-md relative overflow-hidden">
+                <span class="absolute top-4 right-4 bg-yellow-500 text-black text-[10px] md:text-xs font-bold px-3 py-1 rounded">ENFOQUE 360°</span>
+                <p class="text-gray-300 mb-6 relative z-10 leading-relaxed">
+                    Frente a enfoques fragmentados, proponemos un abordaje integral basado en el modelo biopsicosocial. Entendemos al colaborador como un ser completo donde las dimensiones biológica (física), psicológica (emociones, mente) y social (relaciones de equipo y entorno) interactúan constantemente.
+                </p>
+                <div class="bg-gray-800 p-5 rounded-lg border border-gray-700 relative z-10">
+                    <p class="text-yellow-400 font-medium italic">
+                        "Al impactar simultáneamente en estas tres esferas, logramos una transformación cultural profunda, donde el bienestar individual se convierte en el motor del desempeño colectivo y el alcance de las metas corporativas."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PILARES -->
+        <section class="print-break-inside-avoid">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b-4 border-yellow-500 inline-block pb-1">3. Pilares Estratégicos</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Salud Física -->
+                <div class="bg-white rounded-xl shadow-md border-t-4 border-blue-500 p-6 flex flex-col hover:shadow-lg transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-blue-50 text-blue-600 p-3 rounded-lg">
+                            <i data-lucide="activity" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Salud Física y Ergonómica (Fisioterapia)</h3>
+                    </div>
+                    <ul class="text-gray-600 text-sm flex-1 space-y-3 list-disc list-inside marker:text-blue-500">
+                        <li><strong>Descargas Express y Manejo del Dolor:</strong> Sesiones in-situ para liberar tensión muscular en cuello, espalda y manos.</li>
+                        <li><strong>Reeducación Postural:</strong> Análisis de puestos de trabajo (sentado/de pie) para evitar lesiones por sobreuso.</li>
+                        <li><strong>Prevención de Lesiones:</strong> Talleres de higiene postural para personal operativo y administrativo.</li>
+                    </ul>
+                </div>
+                <!-- Fortalecimiento Psicosocial -->
+                <div class="bg-white rounded-xl shadow-md border-t-4 border-purple-500 p-6 flex flex-col hover:shadow-lg transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-purple-50 text-purple-600 p-3 rounded-lg">
+                            <i data-lucide="brain" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Fortalecimiento Psicosocial y Talento (Psicología)</h3>
+                    </div>
+                    <ul class="text-gray-600 text-sm flex-1 space-y-3 list-disc list-inside marker:text-purple-500">
+                        <li><strong>Taller de Comunicación Asertiva y Cohesión de Equipo:</strong> Dinámicas para reducir fricciones internas y mejorar el flujo de trabajo.</li>
+                        <li><strong>Gestión del Estrés y Regulación del Cortisol:</strong> Herramientas prácticas para que el equipo mantenga la calma bajo presión.</li>
+                        <li><strong>Desarrollo de Competencias Blandas:</strong> Liderazgo empático y resiliencia ante el cambio.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PAQUETES SUGERIDOS -->
+        <section class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden print-break-inside-avoid">
+            <div class="bg-gray-100 p-6 border-b border-gray-200 flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">4. Paquetes Sugeridos (Escalables)</h2>
+                    <p class="text-gray-500 text-sm mt-1">Soluciones estandarizadas y adaptables a su volumen y flujo de trabajo.</p>
+                </div>
+                <i data-lucide="package" class="w-8 h-8 text-gray-400"></i>
+            </div>
+            <div class="overflow-x-auto p-0">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-50 text-gray-500 text-xs uppercase tracking-wider">
+                            <th class="py-4 px-6 font-bold w-1/4">Paquete</th>
+                            <th class="py-4 px-6 font-bold w-2/4 text-center">Enfoque Principal</th>
+                            <th class="py-4 px-6 font-bold w-1/4 text-center">Frecuencia & Alcance</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm divide-y divide-gray-100">
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="py-4 px-6 font-bold text-gray-900">Esencial</td>
+                            <td class="py-4 px-6 text-gray-600 text-center">Mitigación de riesgos inminentes e introducción a la cultura del bienestar preventivo.</td>
+                            <td class="py-4 px-6 text-gray-600 text-xs text-center border-l border-gray-100">1 sesión mensual de descarga preventiva + 1 workshop trimestral de ergonomía.</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="py-4 px-6 font-bold text-gray-900">Productividad</td>
+                            <td class="py-4 px-6 text-gray-600 text-center">Intervención regular para reducción del ausentismo y manejo activo del estrés.</td>
+                            <td class="py-4 px-6 text-gray-600 text-xs text-center border-l border-gray-100">2 pausas activas quincenales + evaluaciones ergonómicas por área.</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50 transition bg-yellow-50/30">
+                            <td class="py-4 px-6 font-bold text-yellow-700 flex items-center gap-2">
+                                Alto Rendimiento <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-current"></i>
+                            </td>
+                            <td class="py-4 px-6 text-gray-800 font-medium text-center">Cobertura integral y VIP. Fomento de alto desempeño sostenido y retención de talento.</td>
+                            <td class="py-4 px-6 text-gray-800 text-xs font-medium text-center border-l border-yellow-100">Atención in-house semanal (física y psicosocial) + reportes evolutivos.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 5 Y 6. IMPACTO + PORTAFOLIO 360 -->
+        <div class="grid md:grid-cols-12 gap-8 print-break-inside-avoid">
+            
+            <!-- Beneficios (Columna Izquierda 5/12) -->
+            <section class="md:col-span-5 bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-xl shadow-lg p-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <i data-lucide="trending-up" class="w-32 h-32"></i>
+                </div>
+                <h3 class="font-bold text-xl text-white mb-6 flex items-center gap-2 relative z-10">
+                    <span class="bg-yellow-500 text-black w-6 h-6 rounded-full flex items-center justify-center text-sm">5</span>
+                    Impacto en la Empresa
+                </h3>
+                <ul class="space-y-4 relative z-10">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong class="block text-sm text-yellow-100">Productividad Directa</strong>
+                            <p class="text-xs text-gray-300 mt-1">Empleados sin dolor físico ni agotamiento rinden al máximo de su capacidad.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong class="block text-sm text-yellow-100">Reducción de Costos</strong>
+                            <p class="text-xs text-gray-300 mt-1">Disminución drástica de licencias médicas, ausentismo y rotación.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong class="block text-sm text-yellow-100">Employer Branding</strong>
+                            <p class="text-xs text-gray-300 mt-1">Atracción y retención de talento en una cultura de genuino cuidado.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong class="block text-sm text-yellow-100">Mitigación Legal</strong>
+                            <p class="text-xs text-gray-300 mt-1">Cumplimiento ágil de las normativas de salud ocupacional vigentes.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Portafolio 360 (Columna Derecha 7/12) -->
+            <section class="md:col-span-7 bg-white rounded-xl shadow-sm border border-gray-100 p-8 flex flex-col justify-center">
+                <h3 class="font-bold text-xl text-gray-900 mb-2 flex items-center gap-2">
+                    <span class="bg-gray-100 text-gray-600 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">6</span>
+                    Portafolio 360°
+                </h3>
+                <p class="text-sm text-gray-500 mb-6">Trascendemos la clínica para incrustarnos en la cultura organizacional.</p>
+                
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                        <h4 class="font-bold text-sm text-gray-900 mb-2 flex items-center gap-2">
+                            <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i> Gestión Emocional
+                        </h4>
+                        <p class="text-xs text-gray-600">Sesiones para el manejo de ansiedad y estrés. Autorregulación frente a la presión y el cambio.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                        <h4 class="font-bold text-sm text-gray-900 mb-2 flex items-center gap-2">
+                            <i data-lucide="users" class="w-4 h-4 text-blue-500"></i> Teambuilding
+                        </h4>
+                        <p class="text-xs text-gray-600">Dinámicas inmersivas para reconstruir la empatía, la comunicación asertiva y el desempeño en red.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                        <h4 class="font-bold text-sm text-gray-900 mb-2 flex items-center gap-2">
+                            <i data-lucide="lightbulb" class="w-4 h-4 text-green-500"></i> Soft Skills
+                        </h4>
+                        <p class="text-xs text-gray-600">Entrenamiento en liderazgo empático, resolución pacífica de conflictos corporativos y toma de decisiones.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                        <h4 class="font-bold text-sm text-gray-900 mb-2 flex items-center gap-2">
+                            <i data-lucide="briefcase" class="w-4 h-4 text-purple-500"></i> Consultoría HR
+                        </h4>
+                        <p class="text-xs text-gray-600">Auditorías de bienestar y diseño de planes de salud a la medida según los KPIs directivos de la empresa.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 7. PLAN EQUILIBRIO TOTAL -->
+        <section class="print-break-inside-avoid">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2 border-b-4 border-yellow-500 inline-block pb-1">7. Plan Equilibrio Total</h2>
+            <p class="text-gray-600 mb-6 max-w-3xl">Modelo escalonado de intervención diseñado para garantizar la homeostasis entre la exigencia de metas y el bienestar.</p>
+            
+            <div class="space-y-4">
+                <div class="flex flex-col md:flex-row bg-white border border-gray-100 rounded-lg shadow-sm overflow-hidden hover:border-blue-300 transition-colors">
+                    <div class="bg-gray-100 px-6 py-4 md:w-1/4 flex items-center border-b md:border-b-0 md:border-r border-gray-200">
+                        <h4 class="font-bold text-gray-800 text-lg">Básico</h4>
+                    </div>
+                    <div class="p-6 md:w-3/4 flex items-center text-sm text-gray-600 leading-relaxed">
+                        Acceso a talleres virtuales trimestrales sobre pautas de higiene postural y manejo de pausas activas autónomas. Ideal para la integración de teletrabajo o áreas operativas de alta fluctuación.
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row bg-white border border-gray-100 rounded-lg shadow-sm overflow-hidden hover:border-blue-300 transition-colors">
+                    <div class="bg-blue-50 px-6 py-4 md:w-1/4 flex items-center border-b md:border-b-0 md:border-r border-gray-200">
+                        <h4 class="font-bold text-blue-900 text-lg">Pro</h4>
+                    </div>
+                    <div class="p-6 md:w-3/4 flex items-center text-sm text-gray-600 leading-relaxed">
+                        Esquema híbrido de intervención directa y acompañamiento. Valoraciones físicas y corporales preventivas in-house con sesiones grupales semestrales.
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row bg-white border-2 border-yellow-400 rounded-lg shadow-md overflow-hidden relative">
+                    <div class="absolute top-0 right-0 bg-yellow-400 text-black text-[10px] font-bold px-2 py-1 rounded-bl">EL ESTÁNDAR MÁS ALTO</div>
+                    <div class="bg-gray-900 text-white px-6 py-4 md:w-1/4 flex items-center">
+                        <h4 class="font-bold text-yellow-400 text-lg">Élite</h4>
+                    </div>
+                    <div class="p-6 md:w-3/4 flex items-center text-sm text-gray-900 bg-yellow-50/40 leading-relaxed">
+                        <strong>Inmersión Total.</strong> Profesional asignado a las instalaciones recurrentemente. Fusión de salud integral (rutinas y teambuildings trimestrales presenciales) y consultoría directiva mensual con métricas vivas.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer / Contacto -->
+        <footer class="bg-gray-100 rounded-xl p-8 text-center border border-gray-200 mt-12 print-break-inside-avoid">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">¿Preparado para transformar su organización?</h3>
+            <p class="text-sm text-gray-500 mb-6">El bienestar estratégico es el primer paso hacia el alto rendimiento inquebrantable.</p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-sm font-medium">
+                <a href="mailto:jessica.ocampo.ft@gmail.com" class="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition flex items-center gap-2">
+                    <i data-lucide="mail" class="w-4 h-4"></i> jessica.ocampo.ft@gmail.com
+                </a>
+                <a href="tel:+573136467945" class="bg-white text-gray-900 border border-gray-300 px-6 py-3 rounded-lg hover:bg-gray-50 transition flex items-center gap-2">
+                    <i data-lucide="phone" class="w-4 h-4"></i> +57 313 646 7945
+                </a>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-200 text-xs text-gray-400">
+                <p>&copy; 2024 Jessica Ocampo Fisioterapia. Propuesta exclusiva de Bienestar y Productividad.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
