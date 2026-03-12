@@ -4,120 +4,576 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Propuestas Comerciales - Jessica Ocampo</title>
+    <title>Propuesta de Convenio - Jessica Ocampo Fisioterapia</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
+        :root {
+            --gold-primary: #C5A059;
+            --gold-light: #E8D5B5;
+            --gold-dark: #8E6F3E;
+            --dark-bg: #0F172A;
+            --dark-surface: #1E293B;
+            --cream-bg: #FAF9F6;
+            --text-main: #334155;
+            --text-muted: #64748B;
+        }
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            body {
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .page-break {
+                page-break-before: always;
+                break-before: page;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .content-container {
+                padding: 0 2cm !important; /* Top padding handled by sections */
+            }
+
+            section.page-break-before, 
+            header.cover-page,
+            section:first-of-type {
+                padding-top: 1.5cm !important;
+                margin-top: 0 !important;
+            }
+
+            .section-title {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                width: 100% !important;
+            }
+
+            .section-title::before,
+            .section-title::after {
+                content: '' !important;
+                display: block !important;
+                flex: 1 !important;
+            }
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
+            background-color: var(--cream-bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+        }
+
+        .font-luxury {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Gold Gradient Text */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 50%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Section Headings */
+        .section-title {
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--gold-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .section-title::before,
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-primary));
+        }
+
+        .section-title::after {
+            background: linear-gradient(to right, var(--gold-primary), transparent);
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        /* Cards with Depth */
+        .premium-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px -10px rgba(197, 160, 89, 0.15);
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            position: relative;
+            height: 100%;
+            transition: transform 0.3s ease;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        /* Luxury Tables */
+        .luxury-table-container {
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .luxury-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .luxury-table th {
+            background-color: var(--dark-bg);
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+            padding: 1.2rem;
+            text-align: left;
+        }
+
+        .luxury-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+            font-size: 0.85rem;
+        }
+
+        .luxury-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight-row {
+            background: linear-gradient(to right, rgba(197, 160, 89, 0.05), transparent);
+        }
+
+        /* Two Column Layout */
+        .magazine-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        /* Cover Page Styles */
+        .cover-page {
+            height: 100vh;
+            background-color: var(--dark-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: white;
+            overflow: hidden;
+            page-break-after: always;
+            break-after: page;
+        }
+
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, var(--gold-dark), var(--gold-light), var(--gold-dark));
+        }
+
+        .cover-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .download-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 100;
+            background: var(--dark-bg);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            background: var(--gold-primary);
+        }
+
+        section {
+            break-inside: avoid;
+            page-break-inside: avoid;
+            margin-bottom: 5rem;
+        }
+
+        .page-break-before {
+            page-break-before: always;
+            break-before: page;
+        }
+
+        @media screen and (max-width: 768px) {
+            .magazine-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
-<body class="bg-gray-50 flex items-center justify-center min-h-screen p-6">
+<body>
 
-    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-        <div class="bg-gray-900 p-8 text-center relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-1 bg-yellow-500"></div>
-            <div class="w-20 h-20 bg-white rounded-full mx-auto p-1 mb-4 relative z-10 shadow-lg">
-                <img src="fighterx/fotos/logojof.png" alt="Logo Jessica"
-                    class="w-full h-full object-contain rounded-full">
+    <button onclick="window.print()" class="download-btn no-print">
+        <i data-lucide="download" class="w-5 h-5"></i>
+        DESCARGAR PDF
+    </button>
+
+    <!-- PÁGINA 1: PORTADA -->
+    <header class="cover-page">
+        <div class="cover-pattern"></div>
+        
+        <div class="z-10 text-center px-6">
+            <div class="mb-12">
+                <!-- Usando 4.png con fallback al logo existente -->
+                <img src="4.png" alt="Logo" 
+                     class="h-48 md:h-64 mx-auto drop-shadow-2xl" 
+                     onerror="this.src='logo_jessica.png.png'">
             </div>
-            <h1 class="text-2xl font-bold text-white mb-1">Jessica Ocampo</h1>
-            <p class="text-gray-400 text-sm">Fisioterapeuta</p>
+            
+            <div class="space-y-4">
+                <p class="section-title justify-center" style="letter-spacing: 6px;">Consultoría Estratégica</p>
+                <h1 class="font-luxury text-5xl md:text-7xl font-black mb-8 leading-tight tracking-wider text-gold-gradient">
+                    BIENESTAR INTEGRAL <br> & ALTO RENDIMIENTO
+                </h1>
+                <div class="w-24 h-1 mx-auto bg-gradient-to-r from-transparent via-[#C5A059] to-transparent"></div>
+                <p class="mt-8 text-xl md:text-2xl font-light tracking-[4px] uppercase opacity-70">
+                    Propuesta Corporativa 2025
+                </p>
+            </div>
         </div>
 
-        <div class="p-6 space-y-4">
-            <p class="text-center text-gray-500 text-sm mb-6">Selecciona una propuesta para visualizar:</p>
-
-            <a href="fighterx/"
-                class="block group relative overflow-hidden rounded-xl bg-white border border-gray-200 hover:border-yellow-500 transition-all p-4 hover:shadow-md">
-                <div class="flex items-center gap-4">
-                    <div
-                        class="bg-blue-50 text-blue-600 p-3 rounded-lg group-hover:bg-yellow-500 group-hover:text-white transition-colors">
-                        <i data-lucide="dumbbell" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">FighterX</h3>
-                        <p class="text-xs text-gray-400">Propuesta de Convenio</p>
-                    </div>
-                    <i data-lucide="chevron-right"
-                        class="w-5 h-5 text-gray-300 ml-auto group-hover:text-yellow-500"></i>
-                </div>
-            </a>
-
-            <a href="kingbulltrainingcomisione/"
-                class="block group relative overflow-hidden rounded-xl bg-white border border-gray-200 hover:border-yellow-500 transition-all p-4 hover:shadow-md">
-                <div class="flex items-center gap-4">
-                    <div
-                        class="bg-green-50 text-green-600 p-3 rounded-lg group-hover:bg-yellow-500 group-hover:text-white transition-colors">
-                        <i data-lucide="percent" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">King Bull
-                            Training</h3>
-                        <p class="text-xs text-gray-400">Modelo con Comisiones</p>
-                    </div>
-                    <i data-lucide="chevron-right"
-                        class="w-5 h-5 text-gray-300 ml-auto group-hover:text-yellow-500"></i>
-                </div>
-            </a>
-
-            <a href="indomablecomisiones/"
-                class="block group relative overflow-hidden rounded-xl bg-white border border-gray-200 hover:border-yellow-500 transition-all p-4 hover:shadow-md">
-                <div class="flex items-center gap-4">
-                    <div
-                        class="bg-red-50 text-red-600 p-3 rounded-lg group-hover:bg-yellow-500 group-hover:text-white transition-colors">
-                        <i data-lucide="flame" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">Indomable</h3>
-                        <p class="text-xs text-gray-400">Modelo con Comisiones</p>
-                    </div>
-                    <i data-lucide="chevron-right"
-                        class="w-5 h-5 text-gray-300 ml-auto group-hover:text-yellow-500"></i>
-                </div>
-            </a>
-
-            <a href="indomable/"
-                class="block group relative overflow-hidden rounded-xl bg-white border border-gray-200 hover:border-yellow-500 transition-all p-4 hover:shadow-md">
-                <div class="flex items-center gap-4">
-                    <div
-                        class="bg-purple-50 text-purple-600 p-3 rounded-lg group-hover:bg-yellow-500 group-hover:text-white transition-colors">
-                        <i data-lucide="heart-handshake" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">Indomable</h3>
-                        <p class="text-xs text-gray-400">Modelo Beneficios (Sin Comisión)</p>
-                    </div>
-                    <i data-lucide="chevron-right"
-                        class="w-5 h-5 text-gray-300 ml-auto group-hover:text-yellow-500"></i>
-                </div>
-            </a>
-
-            <a href="kingbulltrainingnocomisiones/"
-                class="block group relative overflow-hidden rounded-xl bg-white border border-gray-200 hover:border-yellow-500 transition-all p-4 hover:shadow-md">
-                <div class="flex items-center gap-4">
-                    <div
-                        class="bg-purple-50 text-purple-600 p-3 rounded-lg group-hover:bg-yellow-500 group-hover:text-white transition-colors">
-                        <i data-lucide="heart-handshake" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">King Bull
-                            Training</h3>
-                        <p class="text-xs text-gray-400">Modelo Beneficios (Sin Comisión)</p>
-                    </div>
-                    <i data-lucide="chevron-right"
-                        class="w-5 h-5 text-gray-300 ml-auto group-hover:text-yellow-500"></i>
-                </div>
-            </a>
+        <div class="absolute bottom-12 left-0 right-0 text-center opacity-40">
+            <p class="text-sm tracking-[2px]">FISIOTERAPIA & PSICOLOGÍA ORGANIZACIONAL</p>
         </div>
+    </header>
 
-        <div class="bg-gray-50 p-4 text-center border-t border-gray-100">
-            <p class="text-xs text-gray-400">Panel de Administración de Propuestas</p>
-        </div>
-    </div>
+    <!-- CONTENIDO - MÁRGENES DE LUJO -->
+    <main class="content-container mx-auto" style="max-width: 800px; padding: 4rem 2rem;">
+
+        <!-- 1. EL RETO -->
+        <section>
+            <div class="section-title">01 / El Escenario Actual</div>
+            <h2 class="main-heading text-gold-gradient">El Reto Corporativo</h2>
+            
+            <div class="magazine-grid">
+                <div class="text-lg italic border-l-4 border-[#C5A059] pl-8 flex items-center">
+                    <p class="leading-relaxed">El ecosistema laboral moderno enfrenta desafíos sin precedentes. El estrés crónico, el burnout (síndrome del trabajador quemado) y las afecciones músculo-esqueléticas no solo deterioran la calidad de vida, sino que representan una fuga silenciosa de capital.</p>
+                </div>
+                <div class="premium-card bg-red-50/30 border-red-100 shadow-none">
+                    <div class="flex items-center gap-3 mb-4 text-red-800">
+                        <i data-lucide="alert-circle" class="w-6 h-6"></i>
+                        <span class="font-bold text-xs uppercase tracking-widest">Alerta de Productividad</span>
+                    </div>
+                    <p class="text-sm leading-relaxed text-red-900">
+                        Estudios demuestran que el ausentismo, la rotación de personal y el presentismo (cuerpo presente, mente ausente) generan <strong>entre un 30% y un 40% de pérdida</strong> en la productividad global. Atender la salud no es un gasto, es la inversión más estratégica.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. NUESTRA SOLUCIÓN -->
+        <section class="page-break-before">
+            <div class="section-title">02 / Metodología</div>
+            <h2 class="main-heading text-gold-gradient">Nuestra Solución: El Modelo Biopsicosocial</h2>
+            
+            <div class="premium-card mb-8">
+                <p class="text-xl font-light leading-relaxed mb-6">
+                    Frente a enfoques fragmentados, proponemos un abordaje integral basado en el modelo biopsicosocial. Entendemos al colaborador como un ser completo donde las dimensiones biológica (física), psicológica (emociones, mente) y social interactúan constantemente.
+                </p>
+                <div class="bg-slate-900 text-white p-6 rounded-lg italic">
+                    <p class="text-gold-light">"Al impactar simultáneamente en estas tres esferas, logramos una transformación cultural profunda, donde el bienestar individual se convierte en el motor del desempeño colectivo."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PILARES -->
+        <section class="page-break-before">
+            <div class="section-title">03 / Especificaciones</div>
+            <h2 class="main-heading text-gold-gradient">Pilares Estratégicos</h2>
+            
+            <div class="magazine-grid">
+                <!-- Salud Física -->
+                <div class="premium-card">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center text-white shadow-lg shadow-[#C5A059]/30">
+                            <i data-lucide="activity" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-luxury text-xl font-bold">Salud Física</h3>
+                            <span class="text-[10px] uppercase tracking-widest text-[#C5A059]">Fisioterapia & Ergonomía</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex gap-4">
+                            <span class="w-1 h-1 rounded-full bg-[#C5A059] mt-2.5"></span>
+                            <p class="text-sm leading-relaxed"><strong>Descargas Express y Manejo del Dolor:</strong> Sesiones in-situ para liberar tensión muscular en cuello, espalda y manos.</p>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="w-1 h-1 rounded-full bg-[#C5A059] mt-2.5"></span>
+                            <p class="text-sm leading-relaxed"><strong>Reeducación Postural:</strong> Análisis de puestos de trabajo (sentado/de pie) para evitar lesiones por sobreuso.</p>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="w-1 h-1 rounded-full bg-[#C5A059] mt-2.5"></span>
+                            <p class="text-sm leading-relaxed"><strong>Prevención de Lesiones:</strong> Talleres de higiene postural para personal operativo y administrativo.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Salud Mental -->
+                <div class="premium-card">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center text-white shadow-lg shadow-[#C5A059]/30">
+                            <i data-lucide="brain" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-luxury text-xl font-bold">Fortalecimiento</h3>
+                            <span class="text-[10px] uppercase tracking-widest text-[#C5A059]">Psicología Organizacional</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex gap-4">
+                            <span class="w-1 h-1 rounded-full bg-[#C5A059] mt-2.5"></span>
+                            <p class="text-sm leading-relaxed"><strong>Comunicación Asertiva y Cohesión:</strong> Dinámicas para reducir fricciones internas y mejorar el flujo de trabajo.</p>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="w-1 h-1 rounded-full bg-[#C5A059] mt-2.5"></span>
+                            <p class="text-sm leading-relaxed"><strong>Gestión del Estrés y Cortisol:</strong> Herramientas prácticas para que el equipo mantenga la calma bajo presión.</p>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="w-1 h-1 rounded-full bg-[#C5A059] mt-2.5"></span>
+                            <p class="text-sm leading-relaxed"><strong>Competencias Blandas:</strong> Liderazgo empático y resiliencia ante el cambio constante.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PAQUETES SUGERIDOS -->
+        <section class="page-break-before">
+            <div class="section-title">04 / Inversión</div>
+            <h2 class="main-heading text-gold-gradient">Paquetes Sugeridos (Escalables)</h2>
+            
+            <div class="luxury-table-container">
+                <table class="luxury-table">
+                    <thead>
+                        <tr>
+                            <th>Paquete</th>
+                            <th>Enfoque Principal</th>
+                            <th>Frecuencia & Alcance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold">Esencial</td>
+                            <td class="text-muted">Mitigación de riesgos inminentes e introducción a la cultura del bienestar preventivo.</td>
+                            <td class="italic text-xs">1 sesión mensual de descarga preventiva + 1 workshop trimestral de ergonomía.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">Productividad</td>
+                            <td class="text-muted">Intervención regular para reducción del ausentismo y manejo activo del estrés.</td>
+                            <td class="italic text-xs">2 pausas activas quincenales + evaluaciones ergonómicas por área.</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td class="font-bold flex items-center gap-2">
+                                Alto Rendimiento
+                                <i data-lucide="star" class="w-3 h-3 text-[#C5A059] fill-current"></i>
+                            </td>
+                            <td class="font-medium">Cobertura integral y VIP. Fomento de alto desempeño sostenido y retención de talento.</td>
+                            <td class="font-bold text-xs text-gold-primary uppercase tracking-tighter">Atención in-house semanal + reportes evolutivos.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 5. IMPACTO -->
+        <section class="page-break-before">
+            <div class="section-title">05 / Valor Agregado</div>
+            <h2 class="main-heading text-gold-gradient">Impacto en la Empresa</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="premium-card p-6 flex flex-col items-center text-center">
+                    <i data-lucide="trending-up" class="w-8 h-8 text-[#C5A059] mb-4"></i>
+                    <h4 class="font-bold text-xs mb-2 uppercase">Productividad</h4>
+                    <p class="text-[10px] text-muted">Empleados sin dolor ni agotamiento rinden al máximo.</p>
+                </div>
+                <div class="premium-card p-6 flex flex-col items-center text-center">
+                    <i data-lucide="piggy-bank" class="w-8 h-8 text-[#C5A059] mb-4"></i>
+                    <h4 class="font-bold text-xs mb-2 uppercase">Ahorro</h4>
+                    <p class="text-[10px] text-muted">Reducción drástica de licencias, ausentismo y rotación.</p>
+                </div>
+                <div class="premium-card p-6 flex flex-col items-center text-center">
+                    <i data-lucide="award" class="w-8 h-8 text-[#C5A059] mb-4"></i>
+                    <h4 class="font-bold text-xs mb-2 uppercase">Branding</h4>
+                    <p class="text-[10px] text-muted">Atracción y retención de talento en cultura de cuidado.</p>
+                </div>
+                <div class="premium-card p-6 flex flex-col items-center text-center">
+                    <i data-lucide="shield-check" class="w-8 h-8 text-[#C5A059] mb-4"></i>
+                    <h4 class="font-bold text-xs mb-2 uppercase">Legalidad</h4>
+                    <p class="text-[10px] text-muted">Cumplimiento ágil de normativas de salud ocupacional.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. PORTAFOLIO 360 -->
+        <section class="page-break-before">
+            <div class="section-title">06 / Portafolio 360°</div>
+            <h2 class="main-heading text-gold-gradient">Ecosistema de Bienestar</h2>
+            <p class="text-center text-muted mb-12 italic">Trascendemos la clínica para incrustarnos en la cultura organizacional.</p>
+            
+            <div class="magazine-grid">
+                <div class="premium-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="heart" class="w-5 h-5 text-rose-500"></i>
+                        <h4 class="font-bold text-sm uppercase">Gestión Emocional</h4>
+                    </div>
+                    <p class="text-xs leading-relaxed text-muted">Sesiones para el manejo de ansiedad y estrés. Autorregulación frente a la presión y el cambio constante en el entorno laboral.</p>
+                </div>
+                <div class="premium-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="users" class="w-5 h-5 text-blue-500"></i>
+                        <h4 class="font-bold text-sm uppercase">Teambuilding</h4>
+                    </div>
+                    <p class="text-xs leading-relaxed text-muted">Dinámicas inmersivas para reconstruir la empatía, la comunicación asertiva y el desempeño colaborativo en red.</p>
+                </div>
+                <div class="premium-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="lightbulb" class="w-5 h-5 text-green-500"></i>
+                        <h4 class="font-bold text-sm uppercase">Soft Skills</h4>
+                    </div>
+                    <p class="text-xs leading-relaxed text-muted">Entrenamiento en liderazgo empático, resolución pacífica de conflictos corporativos y toma de decisiones ágiles.</p>
+                </div>
+                <div class="premium-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="briefcase" class="w-5 h-5 text-purple-500"></i>
+                        <h4 class="font-bold text-sm uppercase">Consultoría HR</h4>
+                    </div>
+                    <p class="text-xs leading-relaxed text-muted">Auditorías de bienestar y diseño de planes de salud a la medida según los KPIs directivos de la compañía.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. PLAN EQUILIBRIO TOTAL -->
+        <section class="page-break-before">
+            <div class="section-title">07 / Homeostasis Organizacional</div>
+            <h2 class="main-heading text-gold-gradient">Plan Equilibrio Total</h2>
+            <p class="text-center text-muted mb-12">Modelo escalonado de intervención diseñado para garantizar la homeostasis entre la exigencia de metas y el bienestar.</p>
+            
+            <div class="space-y-6">
+                <div class="premium-card border-none bg-slate-50">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-1/4">
+                            <h4 class="font-luxury text-2xl font-bold text-slate-800">Básico</h4>
+                            <div class="w-8 h-1 bg-[#C5A059] mt-2"></div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <p class="text-sm leading-relaxed text-muted">Acceso a talleres virtuales trimestrales sobre pautas de higiene postural y manejo de pausas activas autónomas. Ideal para la integración de teletrabajo o áreas operativas de alta fluctuación.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="premium-card border-none bg-blue-50/50">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-1/4">
+                            <h4 class="font-luxury text-2xl font-bold text-blue-900">Pro</h4>
+                            <div class="w-8 h-1 bg-blue-500 mt-2"></div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <p class="text-sm leading-relaxed text-blue-900/70">Esquema híbrido de intervención directa y acompañamiento. Valoraciones físicas y corporales preventivas in-house con sesiones grupales semestrales.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="premium-card border-[#C5A059] bg-slate-900 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-[#C5A059] text-white text-[10px] font-bold px-4 py-1 uppercase tracking-tighter">EL ESTÁNDAR MÁS ALTO</div>
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-1/4">
+                            <h4 class="font-luxury text-2xl font-bold text-white">Élite</h4>
+                            <div class="w-8 h-1 bg-[#C5A059] mt-2"></div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <p class="text-sm leading-relaxed text-gold-light italic"><strong>Inmersión Total.</strong> Profesional asignado a las instalaciones recurrentemente. Fusión de salud integral (rutinas y teambuildings trimestrales presenciales) y consultoría directiva mensual con métricas vivas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="mt-32 pt-16 border-t border-slate-200 text-center">
+            <p class="font-luxury text-3xl font-bold mb-4">¿Preparado para transformar su organización?</p>
+            <p class="text-muted mb-12 max-w-lg mx-auto leading-relaxed">
+                El bienestar estratégico es el primer paso hacia el éxito inquebrantable. Estamos listos para comenzar este camino con usted.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-sm tracking-widest uppercase mb-16">
+                <a href="mailto:jessica.ocampo.ft@gmail.com" class="flex items-center gap-2 hover:text-[#C5A059] transition">
+                    <i data-lucide="mail" class="w-4 h-4"></i> jessica.ocampo.ft@gmail.com
+                </a>
+                <a href="tel:+573136467945" class="flex items-center gap-2 hover:text-[#C5A059] transition">
+                    <i data-lucide="phone" class="w-4 h-4"></i> +57 313 646 7945
+                </a>
+            </div>
+            
+            <div class="opacity-30 text-[9px] uppercase tracking-[5px]">
+                &copy; 2025 Jessica Ocampo Fisioterapia - Todos los derechos reservados
+            </div>
+        </footer>
+
+    </main>
 
     <script>
         lucide.createIcons();
